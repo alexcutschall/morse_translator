@@ -22,4 +22,10 @@ class MorseTranslatorTest < Minitest::Test
     assert_equal "......-...-..--- .-----.-..-..-..", translator.eng_to_morse("Hello World")
     assert_equal "-......-.. .-.-.. ...-- ..........--....", translator.eng_to_morse("There are 3 ships")
   end
+
+  def test_translator_has_a_from_file_function
+    translator = Translate.new
+
+    assert_equal ".. .--- ..-. .- ..-....-...", translator.from_file("input.txt")
+  end
 end

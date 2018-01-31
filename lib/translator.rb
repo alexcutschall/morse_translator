@@ -47,4 +47,15 @@ class Translate
      end
      morse_array.join
   end
+
+  def from_file(file_name)
+    phrase = File.open(file_name).collect do |line|
+      line
+    end
+    phrase.downcase.split("")
+    binding.pry
+  end
 end
+
+translator = Translate.new
+translator.from_file("input.txt")

@@ -1,4 +1,4 @@
-class Translator
+class Translate
   attr_reader :dictionary
 
   def initialize

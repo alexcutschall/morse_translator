@@ -64,7 +64,7 @@ class Translate
     english_array = morse_split_array.collect do |morse|
       dictionary.key(morse)
     end
-    puts english_array
+    english_array.insert(5," ").join
   end
 end
 

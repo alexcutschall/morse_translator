@@ -58,7 +58,15 @@ class Translate
     end
     morse_file.join
   end
+
+  def morse_to_eng(morse)
+    morse_split_array = morse.split(" ")
+    english_array = morse_split_array.collect do |morse|
+      dictionary.key(morse)
+    end
+    puts english_array
+  end
 end
 
 translator = Translate.new
-translator.from_file("input.txt")
+puts translator.morse_to_eng(".... . .-.. .-.. ---  .-- --- .-. .-.. -..")

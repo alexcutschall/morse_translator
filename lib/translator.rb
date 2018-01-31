@@ -49,11 +49,14 @@ class Translate
   end
 
   def from_file(file_name)
-    phrase = File.open(file_name).collect do |line|
+    file = File.open(file_name).map do |line|
       line
     end
-    phrase.downcase.split("")
-    binding.pry
+    file_array = file.join.downcase.split("")
+    morse_file = file_array.collect do |letter|
+      dictionary[letter]
+    end
+    morse_file.join
   end
 end
 

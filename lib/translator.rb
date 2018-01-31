@@ -1,3 +1,4 @@
+require 'pry'
 class Translate
   attr_reader :dictionary
 
@@ -39,5 +40,11 @@ class Translate
                     "9" => "----.",
                     "0" => "-----",
                     " " => " "}
+  end
+  def eng_to_morse(phrase)
+    morse_array = phrase.downcase.split("").collect do |letter|
+      dictionary[letter]
+     end
+     morse_array.join
   end
 end
